@@ -14,7 +14,7 @@ app.post("/my-post-first", (req, res) => {
 
   res.status(200);
   const retVal = Array.from(Array(10).keys()).map(
-    (index) => `first-${req.body.myInput}-${index * 1234356}`
+    (index) => `f-${req.body.myInput}-${req.headers?.who}-${index * 12}`
   );
   res.send({ result: retVal });
 });
@@ -24,7 +24,7 @@ app.post("/my-post-second", (req, res) => {
 
   res.status(200);
   const retVal = Array.from(Array(10).keys()).map(
-    (index) => `second-${req.body.myInput}-${index * 1234356}`
+    (index) => `s-${req.body.myInput}-${req.headers?.who}-${index * 12}`
   );
   res.send({ result: retVal });
 });
